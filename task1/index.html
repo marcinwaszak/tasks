@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="task1.css" rel="stylesheet">
+
+    <title>SEARCH</title>
+  </head>
+  <body>
+    <div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="title">Task 1. Javascript string search.</h2>
+			</div>
+			<div class="col-12">
+				<p>A user will copy and paste text fragments into each of the boxes.<br>
+There should also be a button labeled "search".<br>
+When a user clicks the "search" button, your javascript code should:<ol>
+<li>Extract all keywords from the second input text box. A keyword is a string that starts with mod_ (that is "mod" and then underscore). This is a name of Moodle module - you can see example names in the plugin's repository: <a href="https://moodle.org/plugins/?q=type:mod">https://moodle.org/plugins/?q=type:mod</a>.</li>
+<li>For each of the module names extracted, search for such a string in the first (full text) input box.</li>
+<li>For every keyword extracted, display the results:<br>
+<i>keyword (module) name, result (FOUND or NOT FOUND).</i></li></ol>
+</p>
+			</div>
+			<div class="col-12 col-lg-4">
+				<p>Example:<br>
+				Text copied into first input box (full text) (I've put keywords in bold just to highlight them):</p>
+				<code>
+				Lorem ipsum dolor sit mod_collaborate amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. mod_livepoll Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit mod_hsuforum esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</code>
+			</div>
+			<div class="col-12 col-lg-4">
+				<p>Text copied into second input box (Keywords list):</p>
+				<code>
+				test, mod_collaborate test<br>
+				abc, mod_livepoll_extended , ipsum dolor<br>
+				xyz, mod_hsu, ipsum dolor<br>
+				</code>
+			</div>
+			<div class="col-12 col-lg-4">
+				<p>After clicking the "search" button the result is:</p>
+				<code>
+				mod_collaborate, FOUND<br>
+				mod_livepoll_extended, NOT FOUND<br>
+				mod_hsu, NOT FOUND<br>
+				</code>
+			</div>
+			<div class="col-12 border-top border-1 pt-3 mt-3"><div class="row">
+				<div class="col-12 col-lg-5">
+					<textarea id="fulltext"></textarea>
+				</div>
+				<div class="col-12 col-lg-5">
+					<textarea id="keywords"></textarea>
+				</div>
+				<div class="col-12 col-lg-2">
+					<button  id="searchbtn" class="btn btn-primary" onclick="searchMods()">search</button>
+				</div>
+				<div id="resultcol" class="col-12 offset-lg-3 col-lg-6 text-center">
+					<h3>result</h3>
+					<code id="result"></code>
+				</div>
+			</div></div>
+		</div>
+	</div>
+	
+	<script src="task1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
